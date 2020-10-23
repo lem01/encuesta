@@ -1,4 +1,5 @@
-﻿using System;
+﻿using encuesta;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +8,11 @@ using System.Windows.Forms;
 
 namespace encuesta
 {
-    public class clase_compartida
+    public  class Clase_compartida
     {
         //public static List<string> lista;
         //public static string lista;
-        public static List<persona> lista = new List<persona>();
+        public List<Persona> lista ;
 
         
 
@@ -22,21 +23,29 @@ namespace encuesta
         //}
     }
 
-    public class persona
-    {
-       private int _ID;
-       private string _ciudad;
-      private  int _edad;
 
-        public persona(int ID, string ciudad, int edad)
-        {
-            _ID = ID;
-            _ciudad = ciudad;
-            _edad = edad;
-        }
+    public class Persona
+    {
+        public int _ID;
+        public string _ciudad;
+       public  int _edad;
+
+        //public Persona(int ID, string ciudad, int edad)
+        //{
+        //    _ID = ID;
+        //    _ciudad = ciudad;
+        //    _edad = edad;
+        //}
 
     }
 
+
+   
+
 }
+
+
+
+//clase_compartida.lista.Add();
 
 

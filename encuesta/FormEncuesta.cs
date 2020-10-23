@@ -55,7 +55,9 @@ namespace encuesta
             //    clase_compartida.lista.Add("masculino ");
             //clase_compartida.lista.Add(";");
 
+            //Persona persona = new Persona(Convert.ToInt32(textBoxID.Text),textBoxCiudad.Text, Convert.ToInt32(textBoxEdad.Text));
 
+            //Clase_compartida.lista.Add(persona); 
 
             this.Close();
 

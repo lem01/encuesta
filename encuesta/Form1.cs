@@ -100,22 +100,48 @@ namespace encuesta
             //}
 
             //////////////////////////////////////////////////////////////
+            ///
+
+         
+
+
             TextWriter textWriter = new StreamWriter("encuesta.txt");
 
                 if(saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (File.Exists(saveFileDialog.FileName)) 
-                    {
-                        string filename = saveFileDialog.FileName;
-                        StreamWriter textSave = File.CreateText(filename);
+                if (File.Exists(saveFileDialog.FileName))
+                {
+                    string filename = saveFileDialog.FileName;
+                    StreamWriter textSave = File.CreateText(filename);
 
 
-                    foreach (var dato in clase_compartida.lista)
+                    //foreach (var dato in Clase_compartida.lista)
+                    //{
+                    //    textSave.Write(dato);
+                    //}
+
+                    //for (int i = 0; i >= Clase_compartida.lista.Count; i++)
+                    //{
+                    //    textSave.Write(Clase_compartida.lista[i]);
+                    //}
+
+                    List<Persona> lista = new List<Persona>();
+                    Persona persona = new Persona();
+                    persona._ID = 12;
+                    persona._ciudad = "chinandega";
+                    persona._edad = 20;
+                    lista.Add(persona);
+                    persona._ID = 12;
+                    persona._ciudad = "chinandega";
+                    persona._edad = 20;
+                    lista.Add(persona);
+
+                    foreach (var a in lista)
                     {
-                        textSave.Write(dato);
+                        textSave.Write(a._ID + ";");
+                        textSave.Write(a._ciudad + ";");
+                        textSave.WriteLine(a._edad + ";");
                     }
-
-
 
                     textSave.Flush();
                         textSave.Close();
@@ -125,9 +151,32 @@ namespace encuesta
                         string filename = saveFileDialog.FileName;
                         StreamWriter textSave = File.CreateText(filename);
 
-                    foreach (var dato in clase_compartida.lista)
+                    //foreach (var dato in Clase_compartida.lista)
+                    //{
+                    //    textSave.Write(dato);
+                    //}
+                    //for (int i = 0; i >= Clase_compartida.lista.Count; i++)
+                    //{
+                    //    textSave.Write(Clase_compartida.lista[i]);
+                    //}
+
+                    List<Persona> lista = new List<Persona>();
+                    Persona persona = new Persona();
+                    persona._ID = 12;
+                    persona._ciudad = "chinandega";
+                    persona._edad = 20;
+                    lista.Add(persona);
+                    persona._ID = 12;
+                    persona._ciudad = "chinandega";
+                    persona._edad = 20;
+                    lista.Add(persona);
+
+                    foreach (var a in lista)
                     {
-                        textSave.Write(dato);
+                        textSave.Write(a._ID + ";");
+                        textSave.Write(a._ciudad + ";");
+                        textSave.WriteLine(a._edad + ";");
+
                     }
 
                     textSave.Flush();
