@@ -119,7 +119,7 @@ namespace encuesta
 
                     textSave.Flush();
                         textSave.Close();
-                    }
+                    } 
                     else
                     {
                         string filename = saveFileDialog.FileName;
