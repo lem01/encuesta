@@ -125,22 +125,27 @@ namespace encuesta
                     //    textSave.Write(Clase_compartida.lista[i]);
                     //}
 
-                    List<Persona> lista = new List<Persona>();
-                    Persona persona = new Persona();
-                    persona._ID = 12;
-                    persona._ciudad = "chinandega";
-                    persona._edad = 20;
-                    lista.Add(persona);
-                    persona._ID = 12;
-                    persona._ciudad = "chinandega";
-                    persona._edad = 20;
-                    lista.Add(persona);
 
-                    foreach (var a in lista)
+
+                    //List<Persona> lista = new List<Persona>();
+                    //Persona persona = new Persona();
+                    //persona._ID = 12;
+                    //persona._ciudad = "chinandega";
+                    //persona._edad = 20;
+                    //lista.Add(persona);
+                    //persona._ID = 12;
+                    //persona._ciudad = "chinandega";
+                    //persona._edad = 20;
+                    //lista.Add(persona);
+
+                    foreach (var a in Clase_compartida.lista)
                     {
+                        textSave.Write(a.counter.ToString() + ";");
                         textSave.Write(a._ID + ";");
                         textSave.Write(a._ciudad + ";");
-                        textSave.WriteLine(a._edad + ";");
+                        textSave.Write(a._edad + ";");
+                        if (a._redSocial != null)
+                            textSave.WriteLine(a._redSocial);
                     }
 
                     textSave.Flush();
@@ -160,22 +165,26 @@ namespace encuesta
                     //    textSave.Write(Clase_compartida.lista[i]);
                     //}
 
-                    List<Persona> lista = new List<Persona>();
-                    Persona persona = new Persona();
-                    persona._ID = 12;
-                    persona._ciudad = "chinandega";
-                    persona._edad = 20;
-                    lista.Add(persona);
-                    persona._ID = 12;
-                    persona._ciudad = "chinandega";
-                    persona._edad = 20;
-                    lista.Add(persona);
 
-                    foreach (var a in lista)
+                    //List<Persona> lista = new List<Persona>();
+                    //Persona persona = new Persona();
+                    //persona._ID = 12;
+                    //persona._ciudad = "chinandega";
+                    //persona._edad = 20;
+                    //lista.Add(persona);
+                    //persona._ID = 12;
+                    //persona._ciudad = "chinandega";
+                    //persona._edad = 20;
+                    ////lista.Add(persona);
+
+                    foreach (var a in Clase_compartida.lista)
                     {
+                        textSave.Write(a.counter.ToString() + ";") ;
                         textSave.Write(a._ID + ";");
                         textSave.Write(a._ciudad + ";");
-                        textSave.WriteLine(a._edad + ";");
+                        textSave.Write(a._edad + ";");
+                        if (a._redSocial != null)
+                            textSave.WriteLine(a._redSocial);
 
                     }
 

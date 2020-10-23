@@ -59,6 +59,26 @@ namespace encuesta
 
             //Clase_compartida.lista.Add(persona); 
 
+            Persona persona = new Persona();
+            Clase_compartida.couter += 1;
+            persona.counter = Clase_compartida.couter;
+            persona._ID = Convert.ToInt32(textBoxID.Text);
+            persona._ciudad = textBoxCiudad.Text;
+            persona._edad = Convert.ToInt32(textBoxEdad.Text);
+            
+
+            if (checkBoxFace.Checked == true)
+                persona._redSocial += "Facebook ";
+            else if (checkBoxTwitter.Checked == true)
+                persona._redSocial += "Twitter";
+            else if (checkBoxInstagram.Checked == true)
+                persona._redSocial += "Instragram";
+            else if (checkBoxOtro.Checked == true)
+                persona._redSocial += "Otro";
+            
+
+            Clase_compartida.lista.Add(persona);
+
             this.Close();
 
 

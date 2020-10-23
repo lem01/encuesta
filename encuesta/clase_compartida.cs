@@ -12,7 +12,8 @@ namespace encuesta
     {
         //public static List<string> lista;
         //public static string lista;
-        public List<Persona> lista ;
+        public static List<Persona> lista = new List<Persona>();
+        public static int couter = 0;
 
         
 
@@ -26,9 +27,12 @@ namespace encuesta
 
     public class Persona
     {
+        public int counter;
         public int _ID;
         public string _ciudad;
-       public  int _edad;
+        public  int _edad;
+        public string _redSocial;
+       
 
         //public Persona(int ID, string ciudad, int edad)
         //{
