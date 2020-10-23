@@ -49,7 +49,7 @@
             this.verResultadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(694, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(694, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,6 +102,11 @@
             this.verResultadosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.verResultadosToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
             this.verResultadosToolStripMenuItem.Text = "Ver Resultados";
+            this.verResultadosToolStripMenuItem.Click += new System.EventHandler(this.verResultadosToolStripMenuItem_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.Filter = "Ficheros de texto (*.txt)|*.txt|Todos (*.*)|*.*";
             // 
             // openFileDialog1
             // 

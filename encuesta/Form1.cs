@@ -202,5 +202,15 @@ namespace encuesta
         {
 
         }
+
+        private void verResultadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormResultado forResulados = new FormResultado();
+            forResulados.MdiParent = this;
+            //formEncuesta.WindowState.Maximize
+
+            forResulados.Show();
+        }
     }
 }
