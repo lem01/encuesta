@@ -31,7 +31,7 @@ namespace encuesta
         public int _ID;
         public string _ciudad;
         public  int _edad;
-        public string _redSocial;
+        public List<string> _redSocial;
        
 
         //public Persona(int ID, string ciudad, int edad)

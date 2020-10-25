@@ -30,26 +30,26 @@
         {
             this.tabControlEncuesta = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonM = new System.Windows.Forms.RadioButton();
+            this.radioButtonF = new System.Windows.Forms.RadioButton();
             this.textBoxEdad = new System.Windows.Forms.TextBox();
             this.textBoxCiudad = new System.Windows.Forms.TextBox();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonF = new System.Windows.Forms.RadioButton();
-            this.radioButtonM = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBoxFace = new System.Windows.Forms.CheckBox();
-            this.checkBoxTwitter = new System.Windows.Forms.CheckBox();
-            this.checkBoxInstagram = new System.Windows.Forms.CheckBox();
-            this.checkBoxOtro = new System.Windows.Forms.CheckBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBoxOtro = new System.Windows.Forms.CheckBox();
+            this.checkBoxInstagram = new System.Windows.Forms.CheckBox();
+            this.checkBoxTwitter = new System.Windows.Forms.CheckBox();
+            this.checkBoxFace = new System.Windows.Forms.CheckBox();
             this.tabControlEncuesta.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,17 +81,39 @@
             this.tabPage1.Text = "Datos Generales";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // groupBox1
             // 
-            this.tabPage2.Controls.Add(this.BtnGuardar);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(493, 373);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Datos de Redes Sociales";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.radioButtonM);
+            this.groupBox1.Controls.Add(this.radioButtonF);
+            this.groupBox1.Location = new System.Drawing.Point(59, 230);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(299, 100);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Seleccione el sexo:";
+            this.groupBox1.UseCompatibleTextRendering = true;
+            // 
+            // radioButtonM
+            // 
+            this.radioButtonM.AutoSize = true;
+            this.radioButtonM.Location = new System.Drawing.Point(159, 37);
+            this.radioButtonM.Name = "radioButtonM";
+            this.radioButtonM.Size = new System.Drawing.Size(92, 21);
+            this.radioButtonM.TabIndex = 1;
+            this.radioButtonM.Text = "Masculino";
+            this.radioButtonM.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonF
+            // 
+            this.radioButtonF.AutoSize = true;
+            this.radioButtonF.Checked = true;
+            this.radioButtonF.Location = new System.Drawing.Point(34, 37);
+            this.radioButtonF.Name = "radioButtonF";
+            this.radioButtonF.Size = new System.Drawing.Size(91, 21);
+            this.radioButtonF.TabIndex = 0;
+            this.radioButtonF.TabStop = true;
+            this.radioButtonF.Text = "Femenino";
+            this.radioButtonF.UseVisualStyleBackColor = true;
             // 
             // textBoxEdad
             // 
@@ -100,6 +122,7 @@
             this.textBoxEdad.Name = "textBoxEdad";
             this.textBoxEdad.Size = new System.Drawing.Size(33, 22);
             this.textBoxEdad.TabIndex = 12;
+            this.textBoxEdad.TextChanged += new System.EventHandler(this.textBoxEdad_TextChanged);
             this.textBoxEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEdad_KeyPress);
             // 
             // textBoxCiudad
@@ -115,6 +138,8 @@
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(100, 22);
             this.textBoxID.TabIndex = 10;
+            this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
+            this.textBoxID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxID_KeyPress);
             // 
             // label3
             // 
@@ -143,39 +168,27 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "ID de Encuesta:";
             // 
-            // groupBox1
+            // tabPage2
             // 
-            this.groupBox1.Controls.Add(this.radioButtonM);
-            this.groupBox1.Controls.Add(this.radioButtonF);
-            this.groupBox1.Location = new System.Drawing.Point(59, 230);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(299, 100);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seleccione el sexo:";
-            this.groupBox1.UseCompatibleTextRendering = true;
+            this.tabPage2.Controls.Add(this.BtnGuardar);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(493, 373);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Datos de Redes Sociales";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // radioButtonF
+            // BtnGuardar
             // 
-            this.radioButtonF.AutoSize = true;
-            this.radioButtonF.Checked = true;
-            this.radioButtonF.Location = new System.Drawing.Point(34, 37);
-            this.radioButtonF.Name = "radioButtonF";
-            this.radioButtonF.Size = new System.Drawing.Size(91, 21);
-            this.radioButtonF.TabIndex = 0;
-            this.radioButtonF.TabStop = true;
-            this.radioButtonF.Text = "Femenino";
-            this.radioButtonF.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonM
-            // 
-            this.radioButtonM.AutoSize = true;
-            this.radioButtonM.Location = new System.Drawing.Point(159, 37);
-            this.radioButtonM.Name = "radioButtonM";
-            this.radioButtonM.Size = new System.Drawing.Size(92, 21);
-            this.radioButtonM.TabIndex = 1;
-            this.radioButtonM.Text = "Masculino";
-            this.radioButtonM.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Location = new System.Drawing.Point(128, 293);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(212, 41);
+            this.BtnGuardar.TabIndex = 1;
+            this.BtnGuardar.Text = "Guardar Encuesta";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // groupBox2
             // 
@@ -190,36 +203,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccione las redes sociales que utiliza:";
             // 
-            // checkBoxFace
-            // 
-            this.checkBoxFace.AutoSize = true;
-            this.checkBoxFace.Location = new System.Drawing.Point(35, 44);
-            this.checkBoxFace.Name = "checkBoxFace";
-            this.checkBoxFace.Size = new System.Drawing.Size(92, 21);
-            this.checkBoxFace.TabIndex = 0;
-            this.checkBoxFace.Text = "Facebook";
-            this.checkBoxFace.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTwitter
-            // 
-            this.checkBoxTwitter.AutoSize = true;
-            this.checkBoxTwitter.Location = new System.Drawing.Point(35, 80);
-            this.checkBoxTwitter.Name = "checkBoxTwitter";
-            this.checkBoxTwitter.Size = new System.Drawing.Size(72, 21);
-            this.checkBoxTwitter.TabIndex = 1;
-            this.checkBoxTwitter.Text = "Twitter";
-            this.checkBoxTwitter.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxInstagram
-            // 
-            this.checkBoxInstagram.AutoSize = true;
-            this.checkBoxInstagram.Location = new System.Drawing.Point(35, 116);
-            this.checkBoxInstagram.Name = "checkBoxInstagram";
-            this.checkBoxInstagram.Size = new System.Drawing.Size(97, 21);
-            this.checkBoxInstagram.TabIndex = 2;
-            this.checkBoxInstagram.Text = "Instragram";
-            this.checkBoxInstagram.UseVisualStyleBackColor = true;
-            // 
             // checkBoxOtro
             // 
             this.checkBoxOtro.AutoSize = true;
@@ -231,15 +214,35 @@
             this.checkBoxOtro.UseVisualStyleBackColor = true;
             this.checkBoxOtro.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
-            // BtnGuardar
+            // checkBoxInstagram
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(128, 293);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(212, 41);
-            this.BtnGuardar.TabIndex = 1;
-            this.BtnGuardar.Text = "Guardar Encuesta";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            this.checkBoxInstagram.AutoSize = true;
+            this.checkBoxInstagram.Location = new System.Drawing.Point(35, 116);
+            this.checkBoxInstagram.Name = "checkBoxInstagram";
+            this.checkBoxInstagram.Size = new System.Drawing.Size(97, 21);
+            this.checkBoxInstagram.TabIndex = 2;
+            this.checkBoxInstagram.Text = "Instragram";
+            this.checkBoxInstagram.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTwitter
+            // 
+            this.checkBoxTwitter.AutoSize = true;
+            this.checkBoxTwitter.Location = new System.Drawing.Point(35, 80);
+            this.checkBoxTwitter.Name = "checkBoxTwitter";
+            this.checkBoxTwitter.Size = new System.Drawing.Size(72, 21);
+            this.checkBoxTwitter.TabIndex = 1;
+            this.checkBoxTwitter.Text = "Twitter";
+            this.checkBoxTwitter.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFace
+            // 
+            this.checkBoxFace.AutoSize = true;
+            this.checkBoxFace.Location = new System.Drawing.Point(35, 44);
+            this.checkBoxFace.Name = "checkBoxFace";
+            this.checkBoxFace.Size = new System.Drawing.Size(92, 21);
+            this.checkBoxFace.TabIndex = 0;
+            this.checkBoxFace.Text = "Facebook";
+            this.checkBoxFace.UseVisualStyleBackColor = true;
             // 
             // FormEncuesta
             // 
@@ -253,9 +256,9 @@
             this.tabControlEncuesta.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

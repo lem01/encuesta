@@ -60,48 +60,6 @@ namespace encuesta
 
         private void guardarTodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Stream file;
-            //SaveFileDialog dlGuardar = new SaveFileDialog();
-            //dlGuardar.Title = "Guardar Encuestas";
-            ////dlGuardar.InitialDirectory("c:\\");
-            ////dlGuardar.Filter = "(*.txt)";
-            //dlGuardar.Filter = "ficheros txt (*.txt)|*.txt";
-            //dlGuardar.FilterIndex = 0;
-            //dlGuardar.RestoreDirectory = true;
-
-            //string texto = dlGuardar.FileName;
-            //if (dlGuardar.ShowDialog() == DialogResult.OK)
-            //{
-            //    file = dlGuardar.OpenFile();
-            //    if (file != null)
-            //    {
-            //        //escribi el codigo aqui
-
-            //        //file.BeginWrite(buffer: 1024,);
-
-            //        StreamWriter textoguardar = File.CreateText(texto);
-            //        textoguardar.Write(clase_compartida.lista);
-            //        textoguardar.Flush();
-            //        textoguardar.Close();
-
-
-            //    file.Close();
-            //    }
-            //    else
-            //    {
-            //        StreamWriter textoguardar = File.CreateText(texto);
-            //        textoguardar.Write(clase_compartida.lista);
-            //        textoguardar.Flush();
-            //        textoguardar.Close();
-
-
-            //        file.Close();
-            //    }
-            //}
-
-            //////////////////////////////////////////////////////////////
-            ///
-
          
 
 
@@ -115,28 +73,6 @@ namespace encuesta
                     StreamWriter textSave = File.CreateText(filename);
 
 
-                    //foreach (var dato in Clase_compartida.lista)
-                    //{
-                    //    textSave.Write(dato);
-                    //}
-
-                    //for (int i = 0; i >= Clase_compartida.lista.Count; i++)
-                    //{
-                    //    textSave.Write(Clase_compartida.lista[i]);
-                    //}
-
-
-
-                    //List<Persona> lista = new List<Persona>();
-                    //Persona persona = new Persona();
-                    //persona._ID = 12;
-                    //persona._ciudad = "chinandega";
-                    //persona._edad = 20;
-                    //lista.Add(persona);
-                    //persona._ID = 12;
-                    //persona._ciudad = "chinandega";
-                    //persona._edad = 20;
-                    //lista.Add(persona);
 
                     foreach (var a in Clase_compartida.lista)
                     {
@@ -144,38 +80,22 @@ namespace encuesta
                         textSave.Write(a._ID + ";");
                         textSave.Write(a._ciudad + ";");
                         textSave.Write(a._edad + ";");
-                        if (a._redSocial != null)
-                            textSave.WriteLine(a._redSocial);
+                      
+                       foreach(var redsocial in a._redSocial)
+                        {
+                            
+                            textSave.Write(redsocial);
+                        }
                     }
-
+                    textSave.Write("\n");
                     textSave.Flush();
-                        textSave.Close();
+                    textSave.Close();
                     } 
                     else
                     {
                         string filename = saveFileDialog.FileName;
                         StreamWriter textSave = File.CreateText(filename);
 
-                    //foreach (var dato in Clase_compartida.lista)
-                    //{
-                    //    textSave.Write(dato);
-                    //}
-                    //for (int i = 0; i >= Clase_compartida.lista.Count; i++)
-                    //{
-                    //    textSave.Write(Clase_compartida.lista[i]);
-                    //}
-
-
-                    //List<Persona> lista = new List<Persona>();
-                    //Persona persona = new Persona();
-                    //persona._ID = 12;
-                    //persona._ciudad = "chinandega";
-                    //persona._edad = 20;
-                    //lista.Add(persona);
-                    //persona._ID = 12;
-                    //persona._ciudad = "chinandega";
-                    //persona._edad = 20;
-                    ////lista.Add(persona);
 
                     foreach (var a in Clase_compartida.lista)
                     {
@@ -184,12 +104,16 @@ namespace encuesta
                         textSave.Write(a._ciudad + ";");
                         textSave.Write(a._edad + ";");
                         if (a._redSocial != null)
-                            textSave.WriteLine(a._redSocial);
+                            textSave.WriteLine(a._redSocial +";");
 
+                        foreach (var redsocial in a._redSocial)
+                        {
+                            textSave.WriteLine(redsocial);
+                        }
                     }
-
+                    textSave.Write("\n");
                     textSave.Flush();
-                        textSave.Close();
+                    textSave.Close();
                     }
                 }
 

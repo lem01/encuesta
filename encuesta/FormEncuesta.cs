@@ -15,7 +15,7 @@ namespace encuesta
         public FormEncuesta()
         {
             InitializeComponent();
-            //labelnombre.Text = checkBox1.Text;
+            
             
         }
 
@@ -23,13 +23,6 @@ namespace encuesta
         {
             if (!char.IsNumber(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
                 e.Handled = true;
-            //else if ((e.KeyChar) == 8)
-            //    e.Handled = false;
-
-            //int numero = e.KeyChar;
-            //labelchange.Text = numero.ToString();
-
-
 
         }
 
@@ -40,24 +33,7 @@ namespace encuesta
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            //clase_compartida.counter++;
-            //clase_compartida.lista.Add(clase_compartida.counter.ToString());
-            ////clase_compartida.lista.Add(";");
-            //clase_compartida.lista.Add(textBoxID.Text);
-            ////clase_compartida.lista.Add(";");
-            //clase_compartida.lista.Add(textBoxID.Text);
-            ////clase_compartida.lista.Add(";");
-            //clase_compartida.lista.Add(textBoxEdad.Text);
-            ////clase_compartida.lista.Add(";");
-            //if (radioButtonF.Checked == true)
-            //    clase_compartida.lista.Add("femenino ");
-            //else
-            //    clase_compartida.lista.Add("masculino ");
-            //clase_compartida.lista.Add(";");
 
-            //Persona persona = new Persona(Convert.ToInt32(textBoxID.Text),textBoxCiudad.Text, Convert.ToInt32(textBoxEdad.Text));
-
-            //Clase_compartida.lista.Add(persona); 
 
             Persona persona = new Persona();
             Clase_compartida.couter += 1;
@@ -65,23 +41,39 @@ namespace encuesta
             persona._ID = Convert.ToInt32(textBoxID.Text);
             persona._ciudad = textBoxCiudad.Text;
             persona._edad = Convert.ToInt32(textBoxEdad.Text);
-            
 
+            persona._redSocial = new List<string>();
             if (checkBoxFace.Checked == true)
-                persona._redSocial += "Facebook ";
-            else if (checkBoxTwitter.Checked == true)
-                persona._redSocial += "Twitter";
-            else if (checkBoxInstagram.Checked == true)
-                persona._redSocial += "Instragram";
-            else if (checkBoxOtro.Checked == true)
-                persona._redSocial += "Otro";
-            
+                persona._redSocial.Add("Facebook" +";");
+            if (checkBoxTwitter.Checked == true)
+                persona._redSocial.Add("Twitter" +";");
+            if (checkBoxInstagram.Checked == true)
+                persona._redSocial.Add("Instragram" +";");
+            if (checkBoxOtro.Checked == true)
+                persona._redSocial.Add("Otra" + ";");
 
+            persona._redSocial.Add("\n");
             Clase_compartida.lista.Add(persona);
 
             this.Close();
 
 
+        }
+
+        private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void textBoxEdad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
+                e.Handled = true;
         }
     }
 }
