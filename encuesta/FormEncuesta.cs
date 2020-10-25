@@ -48,7 +48,7 @@ namespace encuesta
             if (checkBoxTwitter.Checked == true)
                 persona._redSocial.Add("Twitter" +";");
             if (checkBoxInstagram.Checked == true)
-                persona._redSocial.Add("Instragram" +";");
+                persona._redSocial.Add("Instagram" +";");
             if (checkBoxOtro.Checked == true)
                 persona._redSocial.Add("Otra" + ";");
 
